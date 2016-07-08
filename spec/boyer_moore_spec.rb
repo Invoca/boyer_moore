@@ -68,7 +68,7 @@ describe BoyerMoore do
       expect(BoyerMoore.search(haystack, needle).first).to eq haystack.index(needle)
     end
   end
-  
+
   it "should match characters" do
     {
       %w[a b c] => 0,
@@ -84,14 +84,14 @@ describe BoyerMoore do
     expect(BoyerMoore.search("xxxfoobarbazxxx".split(''), "foobar".split('')).first).to eq 3
   end
 
-  it "should match words" do
+  it "should match phrases" do
     {
-      ["foo", "bar", "baz"] => 0,
-      ["bam", "bar", "bang"] => nil,
-      ["put", "foo", "bar", "bar"] => 1,
-      ["put", "foo", "bar", "foo", "bar"] => 1
-    }.each do |haystack, position|
-      expect(BoyerMoore.search(haystack, ["foo", "bar"]).first).to eq position
+      ["foo", "bar", "baz"] => [0],
+      ["bam", "bar", "bang"] => [],
+      ["put", "foo", "bar", "bar"] => [1],
+      ["put", "foo", "bar", "baz", "foo", "bar"] => [1, 4]
+    }.each do |haystack, positions|
+      expect(BoyerMoore.search(haystack, ["foo", "bar"]).to_a).to eq positions
     end
   end
 end
