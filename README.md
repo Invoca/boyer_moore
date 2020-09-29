@@ -1,5 +1,10 @@
 # BoyerMoore
 
+## Custom Fork
+This Invoca custom fork updates the gem to return multiple matches of the same phrase in the search text instead of only the first match.
+
+## Details
+
 Inspired by https://github.com/jashmenn/boyermoore
 
 BoyerMoore is the fastest substring search strategy.
@@ -23,8 +28,8 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-BoyerMoore.search("foobar", "bar")     # => 3
-BoyerMoore.search("foobar", "oof")     # => nil
-BoyerMoore.search("foobar", "foo")     # => 0
+BoyerMoore.search("foobarbazbar", "bar") # => [3, 9]
+BoyerMoore.search("foobar", "oof")       # => []
+BoyerMoore.search("foobar", "foo")       # => [0]
 
 ```
