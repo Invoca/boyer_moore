@@ -6,17 +6,17 @@ require 'boyer_moore/version'
 Gem::Specification.new do |spec|
   spec.name          = "boyer_moore"
   spec.version       = BoyerMoore::VERSION
-  spec.authors       = ["Sri Harsha Kappala"]
-  spec.email         = ["sriharsha.kappala@hotmail.com"]
+  spec.authors       = ["Invoca Development"]
+  spec.email         = ["development@invoca.com"]
   spec.licenses      = ['MIT']
   spec.summary       = "Ruby wrapper for BoyerMoore algorithm - The fastest search strategy, ever!"
   spec.description   = "Ruby wrapper for Boyer-Moore - The fastest search strategy, ever!"
-  spec.homepage      = "https://github.com/sriharshakappala/boyer_moore"
+  spec.homepage      = "https://github.com/Invoca/boyer_moore"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
   # delete this section to allow pushing this gem to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "https://rubygems.org"
+    spec.metadata['allowed_push_host'] = "https://gem.fury.io/invoca"
   else
     raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
   end
